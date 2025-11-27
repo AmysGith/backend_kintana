@@ -6,6 +6,9 @@ import re
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def home():
+    return {"status": "KINTANA Backend is running", "version": "1.0"}, 200
 # 🔑 Clé API Gemini (à garder côté serveur)
 GEMINI_API_KEY = "AIzaSyBzLf-42vQ0JL7iyO5Mm6GkfQ_yxKdyTSU"
 GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
